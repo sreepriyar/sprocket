@@ -26,7 +26,7 @@ public class StandAloneControllerTest {
 	public void testCreateGreeting() throws Exception {
  
 		
-		this.mvc.perform(get("/greeting")
+		this.mvc.perform(get("/Sprocket/user1")
 		.header("host", "localhost:80"))
 		.andExpect(status().isOk())
 		.andExpect(content().contentType(contentType));
