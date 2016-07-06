@@ -49,7 +49,7 @@ public class SprocketControllerTest{
  
 	@Test
 	public void testCreateGreeting() throws Exception {
- 
+ //test
 		
 		this.mvc.perform(get("/Sprocket/user1"))
 		.andExpect(status().isOk())
