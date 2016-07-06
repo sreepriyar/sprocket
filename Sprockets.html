@@ -1,0 +1,57 @@
+<!doctype html>
+<html ng-app>
+	<head>
+		<title>Sprocket Application</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+    	<script src="rsclient.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="RSClient">
+			<p>The Total Sprocket is {{sprocket.totalSprocket}}</p>
+			<p>The cashAvailable is {{sprocket.cashAvailable}}</p>
+			<br><br>
+			<b>PLACE ORDER </b>
+	<table cellpadding="2" cellspacing="2" border="1">
+		<tr> 
+		<td> Current Price</td>
+		<td>20</td>
+		</tr>
+		<tr> 
+		<td> Action</td>
+		<td><select ng-model="selectedaction" ng-options="x for x in action">
+</select></td>
+		</tr>
+		<tr> 
+		<td> Amount</td>
+		<td><input type="text" ng-model="amount"/></td>
+		</tr>
+		<tr> 
+		<td> Total</td>
+		<td>{{total=20*amount}}</td>
+		</tr>		
+</table>	
+	<b>HISTORY</b>	
+		<table cellpadding="2" cellspacing="2" border="1">
+		<tr> 
+		<th> Date</th>
+		<th> Action</th>
+		<th> Unit Price</th>
+		<th> Count</th>
+		<th> Total</th>
+		
+		</tr>
+		<tbody>
+   <tr ng-repeat="detailHistory in sprocketDetail">
+    <td>{{detailHistory.orderDate}}</td>
+    <td>{{detailHistory.action}}</td>
+    <td>{{detailHistory.unitPrice}}</td>
+    <td>{{detailHistory.count}}</td>
+    <td>{{detailHistory.total}}</td>
+    
+  </tr>
+  </tbody>		
+</table>
+		</div>
+	</body>
+</html>
